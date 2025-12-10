@@ -27,7 +27,7 @@
     text-align: center;
     box-shadow: var(--shadow);
     transition: 0.35s ease;
-    backdrop-filter: blur(8px);
+    /* backdrop-filter: blur(8px); */
     border: 1px solid rgba(255, 255, 255, 0.25);
     animation: fadeInUp 0.8s ease both;
   }
