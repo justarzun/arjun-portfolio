@@ -1,111 +1,140 @@
-/* ---------- Section ---------- */
-
 .skills-section {
-    padding: 60px 0;
+    padding: 70px 8%;
     text-align: center;
   }
   
   .skills-title {
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 40px;
+    font-weight: 700;
     margin-bottom: 40px;
+    color: var(--text-color);
   }
   
-  /* ---------- Ghibli Card Layout ---------- */
-  
-  .skills-container {
+  /* Skills List */
+  .skills-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
-    padding: 0 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
   }
   
-  .skill-card {
+  /* Skill Row Card */
+  .skill-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     background: var(--card-bg);
-    padding: 22px;
-    border-radius: 18px;
-    text-align: center;
-    box-shadow: var(--shadow);
-    transition: 0.35s ease;
-    /* backdrop-filter: blur(8px); */
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    animation: fadeInUp 0.8s ease both;
+    padding: 18px 20px;
+    border-radius: 14px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    transition: 0.25s ease;
   }
   
-  .skill-card:hover {
-    transform: translateY(-6px) scale(1.03);
+  .skill-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
   }
   
-  /* ---------- Icon ---------- */
+  /* Skill Icon */
+  .skill-icon-box {
+    min-width: 60px;
+    min-height: 60px;
+    background: #ffffff11;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
   .skill-icon {
-    width: 70px;
-    height: 70px;
+    width: 45px;
+    height: 45px;
     object-fit: contain;
-    filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.15));
-    margin-bottom: 10px;
   }
   
-  /* ---------- Title ---------- */
+  /* Text + Bar */
+  .skill-content {
+    flex: 1;
+  }
+  
+  /* Skill Header (Name + % Right side) */
+  .skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   
   .skill-name {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
   }
   
-  /* ---------- Progress Bars ---------- */
+  .skill-percentage {
+    font-size: 16px;
+    color: var(--primary);
+    font-weight: 600;
+  }
   
-  .progress-bar {
+  /* Progress Bar */
+  .skill-bar {
     width: 100%;
-    height: 9px;
-    background: #dadada;
-    border-radius: 20px;
+    height: 10px;
+    margin-top: 10px;
+    background: #e3e3e3;
+    border-radius: 10px;
     overflow: hidden;
-    margin-top: 6px;
   }
   
-  .progress-fill {
+  .skill-bar-fill {
     height: 100%;
-    background: #4caf50;
-    transition: width 0.5s ease-in-out;
-    border-radius: 20px;
+    background: #e63946;
+    border-radius: 10px;
+    transition: width 0.6s ease;
   }
   
-  .skill-level {
-    font-size: 14px;
-    margin-top: 8px;
-    display: inline-block;
-  }
-  
-  /* ---------- Animation ---------- */
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(15px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+  /* Animations */
   .fade-in {
-    animation: fadeIn 0.9s ease forwards;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
+    animation: fadeIn 0.5s ease;
   }
   
   .zoom-in {
-    animation: zoomIn 0.7s ease forwards;
+    animation: zoomIn 0.4s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   
   @keyframes zoomIn {
-    from { transform: scale(0.92); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
   }
   
+  /* Responsive */
+  @media (max-width: 600px) {
+    .skill-item {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .skill-header {
+      justify-content: center;
+      gap: 10px;
+    }
+  
+    .skill-icon-box {
+      min-width: 50px;
+      min-height: 50px;
+    }
+  
+    .skill-name {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .skills-list {
+      grid-template-columns: 1fr;
+    }
+  }

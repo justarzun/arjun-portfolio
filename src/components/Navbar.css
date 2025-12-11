@@ -1,0 +1,18 @@
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .nav-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  
+  .nav-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-color);
+  }
+  

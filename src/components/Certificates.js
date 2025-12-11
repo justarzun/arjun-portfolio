@@ -1,70 +1,47 @@
 import React, { useState } from "react";
 import "./Certificates.css";
 
-import c1 from "../assets/certificates/html.png";
-import c2 from "../assets/certificates/javascript.png";
-import c3 from "../assets/certificates/css.png";
+import c1 from "../assets/certificates/c1.jpeg";
+import c2 from "../assets/certificates/c2.jpeg";
+import c3 from "../assets/certificates/c3.jpeg";
 
 const certificateImages = [c1, c2, c3];
 
-const Certificates = () => {
+export default function Certificates() {
   const [selectedIndex, setSelectedIndex] = useState(null);
 
-  const openModal = (index) => {
-    setSelectedIndex(index);
-  };
-
-  const closeModal = () => {
-    setSelectedIndex(null);
-  };
-
-  const nextSlide = () => {
-    setSelectedIndex((prev) => (prev + 1) % certificateImages.length);
-  };
-
-  const prevSlide = () => {
-    setSelectedIndex((prev) =>
-      prev === 0 ? certificateImages.length - 1 : prev - 1
-    );
-  };
-
   return (
-    <section id="certificates" className="cert-section">
-      <h2 className="cert-title">Certificates</h2>
+    <section id="certificates" className="cert-section fade-in">
+      <h2 className="cert-title">Professional Certifications</h2>
 
-      {/* Certificate Grid */}
-      <div className="cert-grid">
+      <div className="cert-list">
         {certificateImages.map((img, idx) => (
-          <div key={idx} className="cert-card" onClick={() => openModal(idx)}>
-            <img src={img} alt={`Certificate ${idx + 1}`} />
+          <div
+            key={idx}
+            className="cert-large-card zoom-in"
+            onClick={() => setSelectedIndex(idx)}
+          >
+            <img src={img} alt={`Certificate ${idx + 1}`} className="cert-large-img" />
           </div>
         ))}
       </div>
 
-      {/* Modal View */}
+      {/* Modal */}
       {selectedIndex !== null && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            
-            <button className="close-btn" onClick={closeModal}>×</button>
+        <div className="cert-modal-overlay" onClick={() => setSelectedIndex(null)}>
+          <div className="cert-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="cert-close-btn" onClick={() => setSelectedIndex(null)}>
+              ×
+            </button>
 
             <img
               src={certificateImages[selectedIndex]}
-              alt="Large certificate"
-              className="modal-image"
+              alt="Certificate big"
+              className="cert-modal-img"
             />
-
-            <button className="nav-btn left" onClick={prevSlide}>
-              ‹
-            </button>
-            <button className="nav-btn right" onClick={nextSlide}>
-              ›
-            </button>
           </div>
         </div>
       )}
     </section>
   );
-};
-
-export default Certificates;
+}

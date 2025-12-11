@@ -20,8 +20,8 @@ export default function App() {
       <Navbar toggleTheme={toggleTheme} dark={dark} />
       <Home />
       <Skills />
-      <Certificates />
       <Projects />
+      <Certificates />
       <Contact />
     </div>
   );
