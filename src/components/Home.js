@@ -12,7 +12,7 @@ export default function Home() {
         </h1>
 
         <p className="home-text">
-          I am a passionate <strong>Ruby on Rails</strong> & <strong>React.js Developer</strong> with over 2+ years of experience in building modern, scalable, and high-quality web applications. I love creating clean and efficient code, learning new technologies, and transforming ideas into interactive digital experiences.
+          I am a passionate <strong>Ruby on Rails</strong> & <strong>React.js Developer</strong> with over 3+ years of experience in building modern, scalable, and high-quality web applications. I love creating clean and efficient code, learning new technologies, and transforming ideas into interactive digital experiences.
         </p>
 
         <p className="home-text">
@@ -26,7 +26,7 @@ export default function Home() {
             <button className="primary-btn">Hire Me</button>
           </a>
 
-          <a href="/arjun_resume.pdf" download="Arjun_Singh_Resume.pdf">
+          <a href="/arjun_cv.pdf" download="arjun_cv.pdf">
             <button className="outline-btn">Download CV</button>
           </a>
         </div>
